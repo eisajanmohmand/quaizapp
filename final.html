@@ -1,0 +1,147 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQS</title>
+    <link rel="stylesheet" href="mcqs.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center;">MCQS</h1>
+
+    <p><b>(1) My Name is ....</b></p>
+    <ul class="quiz">
+        <li>
+            <label><input type="radio" name="question1" value="a"> <span>eisa</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question1" value="b"> <span>musa</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question1" value="c"> <span>ameer</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question1" value="d"> <span>none of them</span></label>
+        </li>
+    </ul>
+
+    <p><b>(2) My Elder brother Name is ....</b></p>
+    <ul class="quiz">
+        <li>
+            <label><input type="radio" name="question2" value="a"> <span>eisa</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question2" value="b"> <span>musa</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question2" value="c"> <span>ameer</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question2" value="d"> <span>none of them</span></label>
+        </li>
+    </ul>
+
+    <p><b>(3) My Younger brother Name is ....</b></p>
+    <ul class="quiz">
+        <li>
+            <label><input type="radio" name="question3" value="a"> <span>eisa</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question3" value="b"> <span>musa</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question3" value="c"> <span>ameer</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question3" value="d"> <span>none of them</span></label>
+        </li>
+    </ul>
+
+    <p><b>(4) I Study in ....</b></p>
+    <ul class="quiz">
+        <li>
+            <label><input type="radio" name="question4" value="a"> <span>uet</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question4" value="b"> <span>aup</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question4" value="c"> <span>uop</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question4" value="d"> <span>none of them</span></label>
+        </li>
+    </ul>
+
+    <p><b>(5) I am doing my web development course from ....</b></p>
+    <ul class="quiz">
+        <li>
+            <label><input type="radio" name="question5" value="a"> <span>islamiya it academy</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question5" value="b"> <span>Saylani (SMIT)</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question5" value="c"> <span>Dg skill</span></label>
+        </li>
+        <li>
+            <label><input type="radio" name="question5" value="d"> <span>none of them</span></label>
+        </li>
+    </ul>
+
+    <button class="view-results" onclick="returnScore()">View Results</button>
+    <span id="myresults" class="my-results">My results will appear here</span>
+
+</body>
+
+<script>
+
+
+function returnScore() {
+    var correctAnswers = 0;
+    var totalQuestions = 5;
+
+    // Define the correct answers for each question
+    var correctOptions = ['a', 'b', 'c', 'b', 'b'];
+
+    // Loop through each question
+    for (var i = 1; i <= totalQuestions; i++) {
+        // Get the selected radio button for the current question
+        var selectedOption = document.querySelector('input[name="question' + i + '"]:checked');
+
+        // If an option is selected
+        if (selectedOption) {
+            // Check if the value of the selected option matches the correct answer
+            if (selectedOption.value === correctOptions[i - 1]) {
+                // Increment the count of correct answers
+                correctAnswers++;
+            }
+        }
+    }
+
+    // Display the results
+    var resultsElement = document.getElementById('myresults');
+    resultsElement.textContent = "Your score: " + correctAnswers + " out of " + totalQuestions;
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</html>
+
+
